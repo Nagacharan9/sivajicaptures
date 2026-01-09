@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+    --card: 40 30% 97%;
+    --card-foreground: 30 10% 15%;
+    --primary: 33 45% 35%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 35 25% 90%;
+    --secondary-foreground: 30 10% 25%;
+    --muted: 35 20% 93%;
+    --muted-foreground: 30 8% 45%;
+    --accent: 30 50% 45%;
+    --accent-foreground: 40 33% 98%;
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 33 45% 35%;
+    --radius: 0.25rem;
+    --gold: 38 60% 55%;
+    --gold-light: 40 50% 75%;
+    --cream: 40 33% 96%;
+    --warm-gray: 30 8% 45%;
+    --charcoal: 30 10% 15%;
+    --shadow-soft: 0 4px 20px -4px hsl(30 10% 15% / 0.08);
+    --shadow-elegant: 0 8px 40px -8px hsl(30 10% 15% / 0.12);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-sans { font-family: 'Montserrat', system-ui, sans-serif; }
+  .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+  .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+  .hover-lift { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+  .hover-lift:hover { transform: translateY(-8px); box-shadow: var(--shadow-elegant); }
+  .perspective-1000 { perspective: 1000px; }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+html { scroll-behavior: smooth; }
